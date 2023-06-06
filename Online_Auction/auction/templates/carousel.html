@@ -1,0 +1,304 @@
+{% extends 'navigation.html' %}
+{% block body %}
+{% load static %}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+
+div.image {
+  width:100%;
+  height:500px;
+  margin-top:1px;
+  background:url({% static 'images/auction5.jpg' %});
+  background-repeat:no-repeat;
+  background-position:center;
+  border:2px solid;
+  border-color:#CD853F;
+}
+
+div.transparentbox  {
+  width:100%;
+  height:500px;
+  background-color:black;
+  border:1px solid;
+  border-color:#CD853F;
+  opacity:0.6;
+  filter:alpha(opacity=60);
+}
+
+  div.transparentbox1  {
+  opacity:0.6;
+  filter:alpha(opacity=60);
+}
+
+div.transparentbox p  {
+  margin-top:18%;
+  margin-left:29%;
+  font-weight:bold;
+  font-Size:60px;
+  font-family : 'perpetua ' ;
+  color : white;
+  font-weight : bold;
+  text-align:center;
+}
+
+div.transparentbox1 p  {
+  margin-top:10%;
+  margin-left:31%;
+  font-weight:bold;
+  font-Size:60px;
+  font-family : 'perpetua' ;
+  color : #E6120E;
+  font-weight : bold;
+  text-align:center;
+}
+
+#circle {
+    background: green;
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+}
+
+#halfCircleBottom{
+     height:75px;
+     width:150px;
+     border-radius: 0 0 90px 90px;
+     background-color:#3d4d65;
+     margin:0px;
+}
+
+#halfCircle{
+     height:75px;
+     width:150px;
+     border-radius: 90px 90px 0 0;
+     background:green;
+     margin:0px;
+}
+.welcome-section {
+  margin-top:20px;
+}
+
+.welcome-section {
+  font-size: 16px;
+}
+.welcome-section {
+  text-align: center;
+  font-size: 18px;
+  line-height: 1.4;
+  margin: 0 0 58px;
+}
+
+.button {
+  background-color: #ff9948;
+  font-weight: 400;
+  font-size: 18px;
+  color: #fff;
+  display: inline-block;
+  line-height: 1.35;
+  padding: 10px 30px;
+  vertical-align: bottom;
+  border-radius: 5px;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+a {
+  color: #e28133;
+  text-decoration: none;
+}
+a:hover {
+  color: #8493a8;
+  background-color: transparent;
+  text-decoration: none;
+}
+#footer {
+  background:#3d4d65;
+  position:relative;
+  z-index: 3;
+  padding: 70px 0 0;
+}
+.footer-top {
+  text-align: center;
+}
+.wrap {
+  width: auto;
+  padding: 0 15px;
+  max-width: 1170px;
+  width: 100%;
+  margin: 0 auto;
+}
+.boy-thumb {
+  display: block;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: -50px;
+}
+.boy-thumb img {
+  border-radius: 100%;
+  border: 3px solid #3d4d65;
+  width: 100px;
+  height: 100px;
+}
+img {
+
+  vertical-align: top;
+}
+.fmenu {
+  margin: 0 0 12px;
+}
+.fmenu ul {
+  margin: 0 -12px;
+  padding: 0;
+  list-style: none;
+  font-size: 1;
+}
+.fmenu li {
+  padding: 5px 12px;
+  position: relative;
+  display: inline-block;
+}
+.social {
+  margin: 0 0 12px;
+}
+.social ul {
+  margin: 0 -12px;
+  padding: 0;
+  list-style: none;
+  font-size: 1;
+}
+.social li {
+  padding: 5px 12px;
+  position: relative;
+  display: inline-block;
+  border-radius:50%;
+}
+.copyright {
+  float: none;
+}
+
+
+</style>
+
+<div class="image">
+  <div class="transparentbox">
+    <div class="row">
+      <p style="text-align:center">Online Auction Service Portal</p>
+    </div>
+  </div>
+</div>
+
+<div class="welcome-section">
+  <div class="wrap">
+    <br>
+    <h1>India's No#1 Auction Bidding Platform  </h1>
+    <p>
+      100% RISKFREE ONLINE AUCTIONS, WIN or BUY BRANDED NEW PRODUCTS OR RARE PRODUCTS
+      <br>
+      60000+ Members , 15000+ Completed Auctions , Always Fair Auction Guaranteed. 
+      <br> 
+      Worldwide Shipping , Rarest Gadgets, Click To BID Easy Auctions               
+    </p>
+    <a href="#" class="button btn-login">Join Now</a>
+  </div>
+</div>
+
+<div class="container">
+  <h4 align="center" style="color:#3d4d65;margin-top:2%">Just 4 Step to follow</h4><hr>
+</div>
+
+<div class="container" style="margin-top:4%">
+  <div class="row">
+    <div class="col-md-3">
+      <div class="transparentbox1">
+        <p id="halfCircle"><i class="fa fa-user-plus" style="color:white;font-size:40px"></i>
+        <p id="halfCircleBottom" style="font-size:20px;color:white">
+        Participate our service
+      </p>
+      </div></div>
+
+<div class="col-md-3">
+      <div class="transparentbox1">
+        <p id="halfCircle"><i class="fa fa-trophy" style="color:white;font-size:40px"></i>
+        <p id="halfCircleBottom" style="font-size:20px;color:white">
+        Win Your Product
+      </p>
+      </div></div>
+
+<div class="col-md-3">
+      <div class="transparentbox1">
+        <p id="halfCircle"><i class="fa fa-credit-card" style="color:white;font-size:40px"></i>
+        <p id="halfCircleBottom" style="font-size:20px;color:white">
+        Pay on delivery
+      </p>
+      </div>
+    </div>
+
+<div class="col-md-3">
+      <div class="transparentbox1">
+        <p id="halfCircle"><i class="fa fa-thumbs-up" style="color:white;font-size:40px"></i>
+        <p id="halfCircleBottom" style="font-size:20px;color:white">
+        Enjoy our Service
+      </p>
+      </div>
+    </div>
+  </div>
+</div><br><br><br>
+
+
+
+<footer id="footer"> <div class="footer-top">
+  <div class="wrap">
+    <div class="boy-thumb">
+      <figure>
+        <img src="{% static 'images/boy-thumb.jpg' %}">
+      </figure>
+    </div>
+    <nav class="fmenu">
+      <ul>
+        <li><a href="Terms" title="Terms & Conditions">Terms & Conditions</a></li>
+        <li><a href="Terms" title="Legal Terms of use">Legal Terms of use</a></li>
+        <li><a href="Terms" title="Privacy">Privacy</a></li>
+        <li><a href="Terms" title="Partnerships">Partnerships</a></li>
+        <li><a href="Terms" title="Winning Tips">Winning Tips</a></li>
+      </ul>
+    </nav>
+    <l-/.fmenu->
+    <nav class="fmenu">
+      <ul>
+        <li><a href="Terms" title="How it works">How it works</a></li>
+        <li><a href="Terms" title="FAQs">FAQs</a></li>
+        <li><a href="Terms" title="About Us">About Us</a></li>
+        <li><a href="Terms" title="Contact Us">Contact Us</a></li>
+      </ul>
+    </nav>
+    <ul class="social">
+      <li><span style="font-size:30px;font-weight:bold;color:deeppink;margin-right:2%">
+        <a href="#" style="color:#8493a8;"><i class="fa fa-instagram"></i></a></span></li>
+      <li><span style="font-size:30px;font-weight:bold;color:lightgreen;margin-right:2%">
+        <a href="#" style="color:#8493a8;"><i class="fa fa-whatsapp"></i></a></span></li>
+      <li><span style="font-size:30px;font-weight:bold;color:blue;margin-right:2%">
+        <a href="#" style="color:#8493a8;"><i class="fa fa-facebook"></i></a></span></li>
+      <li><span style="font-size:30px;font-weight:bold;color:darkblue;margin-right:2%">
+        <a href="#" style="color:#8493a8;"><i class="fa fa-telegram"></i></a></span></li>
+    </ul>
+  </div>
+</div>
+
+
+<div class ="copyright-section">
+  <div class="wrap">
+    <div class="copyright">
+      <hr color="#8493a8"><center>
+      <h6 style="color: #8493a8;"> Copyright 2023-2024
+      <a href="#"> The Bidder corporation </a>
+      . All rights reserved.</h6></center><br>
+    </div>
+  </div>
+</div>
+
+
+
+{% block body1 %}
+{% endblock %}
+{% endblock %}
