@@ -22,28 +22,25 @@
 {% for i in pro %}
   <tr>
     <td>{{forloop.counter}}</td>
-    <td>{{i.aucted_product.product.name}}</td>
-    <td>{{i.aucted_product.user.user.username}}</td>
-    <td>{{i.aucted_product.product.session.date.date}}</td>
-    <td>{{i.aucted_product.product.session.time}}</td>
-      {% if i.result %}
+<td>{{i.aucted_product.product.name}}</td>
+<td>{{i.aucted_product.user.user.username}}</td>
+<td>{{i.aucted_product.product.session.date.date}}</td>
+<td>{{i.aucted_product.product.session.time}}</td>
+{% if i.result %}
     <td>{{i.result}}</td>
-      {% else %}
-<td style="color:green">Start on time</td>
-      {% endif %}
-      {% ifequal i.payment.pay "pending" %}
-      <td><a href="{% url 'Payment_mode' i.id %}" ><button class="btn btn-primary">Pay online</button></a></td>
- {% else %}
-      {% ifequal i.payment.pay "paid" %}
-       <td>Paid</td>
-       {% else %}
-      {% ifequal i.payment.pay "reject" %}
-      <td style="font-size:20px;color:red"><i class="fa fa-times"></i> </td>
-      {% else %}
-      <td>Not Available</td>
-      {% endifequal %}
-      {% endifequal %}
-      {% endifequal %}
+{% else %}
+    <td style="color:green">Start on time</td>
+{% endif %}
+
+{% if i.payment.pay == "pending" %}
+    <td><a href="{% url 'Payment_mode' i.id %}"><button class="btn btn-primary">Pay online</button></a></td>
+{% elif i.payment.pay == "paid" %}
+    <td>Paid</td>
+{% elif i.payment.pay == "reject" %}
+    <td style="font-size:20px;color:red"><i class="fa fa-times"></i></td>
+{% else %}
+    <td>Not Available</td>
+{% endif %}
   </tr>
    {% endfor %}
 
