@@ -17,25 +17,26 @@
 					<center>
                         <button class="btn btn-success" style="width:70%">
                             <i style="color:yellow;font-size:20px" class="fa fa-clock-o"></i> {{j.product.session.time}}
-                        </button>
-                        <img src="{{j.product.images.url}}" style="margin-top:1%;width:170px;height:170px;float:center"></center>
-   						<div style="padding:10px">
-   						<h5 style="color:red;font-weight:bold"> {{j.product.name}} </h5>
-                            <div class="row">
-                            <div class="col-md-12">
-                                <span style="font-weight:bold;color:blue">&#8377; : {{j.product.min_price}}</span>
-                            </div>
-                            </div></div>
-                        {% ifnotequal j.product.status.status 'Done' %}
-							<a href="{% url 'particpated_user' j.id %}"><button type="submit" class="btn btn-primary" style="width:100%">
-                                    <i class="fa fa-users"></i> Participated</button></a>
-                        {% else %}
-                            <a href="{% url 'winner1' j.product.id %}"><button type="submit" class="btn btn-dark" style="width:100%">
-                                    <i class="fa fa-user"></i> Winner</button></a>
-                        {% endifnotequal %}
-   				</div></div>
-            {% endif %}
-			{% endfor %}
+</button>
+<img src="{{j.product.images.url}}" style="margin-top:1%;width:170px;height:170px;float:center"></center>
+<div style="padding:10px">
+    <h5 style="color:red;font-weight:bold"> {{j.product.name}} </h5>
+    <div class="row">
+        <div class="col-md-12">
+            <span style="font-weight:bold;color:blue">&#8377; : {{j.product.min_price}}</span>
+        </div>
+    </div>
+</div>
+{% if j.product.status.status != 'Done' %}
+    <a href="{% url 'particpated_user' j.id %}"><button type="submit" class="btn btn-primary" style="width:100%">
+        <i class="fa fa-users"></i> Participated</button></a>
+{% else %}
+    <a href="{% url 'winner1' j.product.id %}"><button type="submit" class="btn btn-dark" style="width:100%">
+        <i class="fa fa-user"></i> Winner</button></a>
+{% endif %}
+</div></div>
+{% endif %}
+{% endfor %}
 
 	</div>
  </div>
