@@ -26,25 +26,20 @@
                             </div><div class="col-md-5" align="right"><span style="font-weight:bold;color:grey">
                                 <a href="{% url 'product_detail' j.id %}"> <i class="fa fa-info"></i> Detail</a></span></div>
                             </div></div>
-                        {% ifequal j.temp 0 %}
-                                <form action="{% url 'view_auction' j.id %}" method="post">
-								{% csrf_token %}
-								<button type="submit" class="btn btn-primary" style="width:100%" onclick="return confirm('Are you sure?')">Participate</button>
-							</form>
-                        {% else %}
-                        {% ifequal j.temp 2 %}
-                        <a href="{% url 'start_auction' j.id %}" ><button type="submit" class="btn btn-danger" style="width:100%">Currently in Bid =</button></a>
-                        {% else %}
-                         {% ifequal j.temp 3 %}
-                             <a href="{% url 'winner1' j.id %}" ><button type="submit" class="btn btn-danger" style="width:100%">
-                                 <i class="fa fa-user"></i> winner announced</button></a>
-                        {% else %}
-                        <div align="center">
-                 				<p style="color:red">Already Participated</p>
-                        </div>
-{% endifequal %}
-{% endifequal %}
-{% endifequal %}
+                       {% if j.temp == 0 %}
+    <form action="{% url 'view_auction' j.id %}" method="post">
+        {% csrf_token %}
+        <button type="submit" class="btn btn-primary" style="width:100%" onclick="return confirm('Are you sure?')">Participate</button>
+    </form>
+{% elif j.temp == 2 %}
+    <a href="{% url 'start_auction' j.id %}"><button type="submit" class="btn btn-danger" style="width:100%">Currently in Bid =</button></a>
+{% elif j.temp == 3 %}
+    <a href="{% url 'winner1' j.id %}"><button type="submit" class="btn btn-danger" style="width:100%">
+        <div align="center">
+            <p style="color:red">Already Participated</p>
+        </div>
+    </button></a>
+{% endif %}
    				</div></div>
             {% endif %}
 			{% endfor %}
