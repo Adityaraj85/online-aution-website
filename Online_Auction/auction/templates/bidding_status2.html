@@ -18,24 +18,22 @@
   </tr>
   </thead>
    <tbody>
-
-{% for i in pro %}
-  <tr>
-    <td>{{forloop.counter}}</td>
-    <td>{{i.product.name}}</td>
-    <td>{{i.user.user.username}}</td>
-    <td>{{i.product.session.date.date}}</td>
-    <td>{{i.product.session.time}}</td>
-    <td>{{i.product.status.status}}</td>
-      {% ifequal i.product.status.status 'Done' %}
-    <td>{{i.winner}}</td>
-      {% else %}
-      <td style="color:green">NotStarted/NotProperBid</td>
-{% endifequal %}
-  </tr>
-   {% endfor %}
-
-    </tbody>
+    {% for i in pro %}
+    <tr>
+        <td>{{forloop.counter}}</td>
+        <td>{{i.product.name}}</td>
+        <td>{{i.user.user.username}}</td>
+        <td>{{i.product.session.date.date}}</td>
+        <td>{{i.product.session.time}}</td>
+        <td>{{i.product.status.status}}</td>
+        {% if i.product.status.status == 'Done' %}
+            <td>{{i.winner}}</td>
+        {% else %}
+            <td style="color:green">NotStarted/NotProperBid</td>
+        {% endif %}
+    </tr>
+    {% endfor %}
+</tbody>
 </table>
 
  </div>
